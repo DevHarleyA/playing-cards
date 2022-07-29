@@ -27,14 +27,7 @@ public class TestMain {
     System.out.println(deck);
 
     // sort with new RankFirst Comparator
-    deck.sort((card1, card2) -> {
-      // Relying on the Rank Enum to know how to compare each other.
-      int comparison = card1.getRank().compareTo(card2.getRank());
-      if (comparison == 0) {
-        comparison = card1.getSuit().compareTo(card2.getSuit());
-      }
-      return comparison;
-    });
+    deck.sort(Comparator.comparing(Card::getRank).thenComparing(Card::getSuit));
 
     System.out.println(deck);
 

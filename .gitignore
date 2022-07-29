@@ -1,0 +1,12 @@
+.idea/
+#intellij specific (idea)
+.gradle/
+build/
+
+*.iml
+#intellik specific (iml)
+.floo*
+#floobits
+
+.DS_Store
+# mac specific

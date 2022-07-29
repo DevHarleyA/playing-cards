@@ -27,17 +27,13 @@ public class TestMain {
     System.out.println(deck);
 
     // sort with new RankFirst Comparator
-    deck.sort(new Comparator<Card>() {
-
-      @Override
-      public int compare(Card card1, Card card2) {
-        // Relying on the Rank Enum to know how to compare each other.
-        int comparison = card1.getRank().compareTo(card2.getRank());
-        if (comparison == 0) {
-          comparison = card1.getSuit().compareTo(card2.getSuit());
-        }
-        return comparison;
+    deck.sort((card1, card2) -> {
+      // Relying on the Rank Enum to know how to compare each other.
+      int comparison = card1.getRank().compareTo(card2.getRank());
+      if (comparison == 0) {
+        comparison = card1.getSuit().compareTo(card2.getSuit());
       }
+      return comparison;
     });
 
     System.out.println(deck);

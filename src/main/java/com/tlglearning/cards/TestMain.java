@@ -2,7 +2,9 @@ package com.tlglearning.cards;
 
 import com.tlglearning.cards.model.Card;
 import com.tlglearning.cards.model.Deck;
+import com.tlglearning.cards.strategy.RankFirstComparator;
 import java.security.SecureRandom;
+import java.sql.SQLOutput;
 import java.util.Random;
 
 public class TestMain {
@@ -19,9 +21,15 @@ public class TestMain {
     // print it out again
     System.out.println(deck);
     // iterate through the cards
-    for (Card card : deck) {
-      System.out.println(card);
-    }
+//    for (Card card : deck) {
+//      System.out.println(card);
+//    }
+    deck.sort();
+    System.out.println(deck);
+
+    // sort with new RankFirst Comparator
+    deck.sort(new RankFirstComparator());
+    System.out.println(deck);
 
   }
 

@@ -24,7 +24,7 @@ public class Trick {
     splitDeck(deck, blackPile, redPile);
     // DONE Swap a random number of cards between red and black piles.
     swapCards(rng, blackPile, redPile);
-    // TODO Tally count of red cards in red pile, black cards in black pile, and print result.
+    // DONE Tally count of red cards in red pile, black cards in black pile, and print result.
     tallyPiles(blackPile, redPile);
   }
 
